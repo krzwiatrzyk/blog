@@ -1,0 +1,7 @@
+103.203.57.29 - - [01/Oct/2021:22:48:16 +0200] "GET / HTTP/1.1" 200 595 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36"
+5.173.65.198 - - [01/Oct/2021:22:56:48 +0200] "GET / HTTP/2.0" 200 4527 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 OPR/79.0.4143.50"
+5.173.65.198 - - [01/Oct/2021:22:56:48 +0200] "GET /assets/built/screen.css?v=2acd773288 HTTP/2.0" 200 6896 "https://krzwiatrzyk.eu/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 OPR/79.0.4143.50"
+5.173.65.198 - - [01/Oct/2021:22:56:48 +0200] "GET /assets/built/casper.js?v=2acd773288 HTTP/2.0" 200 1312 "https://krzwiatrzyk.eu/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 OPR/79.0.4143.50"
+5.173.65.198 - - [01/Oct/2021:22:56:54 +0200] "GET /favicon.ico HTTP/2.0" 200 3781 "https://krzwiatrzyk.eu/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 OPR/79.0.4143.50"
+107.189.6.44 - - [01/Oct/2021:22:58:35 +0200] "POST /boaform/admin/formLogin HTTP/1.1" 301 162 "http://85.255.1.106:80/admin/login.asp" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0"
+107.189.6.44 - - [01/Oct/2021:22:58:36 +0200] "" 400 0 "-" "-"
