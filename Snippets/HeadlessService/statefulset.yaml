@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: test
+spec:
+  selector:
+    matchLabels:
+      app: test
+  serviceName: headless
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: test
+        image: busybox
+        ports:
+        - containerPort: 80
+          name: http
+        command:
+          - /bin/sh
+          - "-c"
+          - sleep 1d
