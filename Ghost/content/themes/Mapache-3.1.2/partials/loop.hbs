@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col col-left story-feed">
+        <div class="story-feed-content">
+            {{#foreach posts visibility="all"}}
+                {{!-- Story - partials/story/story-list.hbs --}}
+                {{> "story/story-list"}}
+            {{/foreach}}
+        </div>
+    </div>
+    {{!-- Sidebar - partials/sidebar.hbs --}}
+    {{> "sidebar"}}
+</div>

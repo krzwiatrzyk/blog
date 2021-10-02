@@ -12,11 +12,11 @@ services:
       - 2368:2368
     environment:
       # see https://docs.ghost.org/docs/config#section-running-ghost-with-config-env-variables
-      url: "http://krzwiatrzyk.eu"
+      url: "https://krzwiatrzyk.eu"
     networks:
     - swag_proxy_network
     volumes:
-    - /root/blog/Ghost/content:/var/www/ghost
+    - /root/blog/Ghost/content:/var/lib/ghost/content
 
 networks:
   swag_proxy_network:
