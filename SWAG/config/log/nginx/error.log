@@ -14,3 +14,6 @@
 2021/10/12 03:24:07 [crit] 1698#1698: *4289 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 184.105.247.254, server: 0.0.0.0:443
 2021/10/12 20:29:21 [crit] 1698#1698: connect() to [2a02:26f0:9700::5b2:2ada]:80 failed (99: Address not available) while requesting certificate status, responder: r3.o.lencr.org, peer: [2a02:26f0:9700::5b2:2ada]:80, certificate: "/config/keys/letsencrypt/fullchain.pem"
 2021/10/12 23:35:21 [crit] 1698#1698: *4739 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 165.227.76.114, server: 0.0.0.0:443
+2021/10/13 01:11:19 [crit] 1698#1698: *4761 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 192.241.210.88, server: 0.0.0.0:443
+2021/10/13 06:26:47 [crit] 1698#1698: *4827 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 74.82.47.5, server: 0.0.0.0:443
+2021/10/13 14:33:26 [crit] 1698#1698: *4907 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 45.64.186.122, server: 0.0.0.0:443
