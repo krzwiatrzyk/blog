@@ -1,2 +1,1 @@
-2021-10-10 02:00:00,415 fail2ban.server         [471]: INFO    rollover performed on /config/log/fail2ban/fail2ban.log
-2021-10-16 20:42:54,111 fail2ban.filter         [471]: INFO    [nginx-botsearch] Found 115.217.141.137 - 2021-10-16 20:42:53
+2021-10-17 02:00:00,861 fail2ban.server         [471]: INFO    rollover performed on /config/log/fail2ban/fail2ban.log
