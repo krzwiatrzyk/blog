@@ -1,1 +1,5 @@
 2021-11-07 02:00:01,195 fail2ban.server         [470]: INFO    rollover performed on /config/log/fail2ban/fail2ban.log
+2021-11-12 07:01:13,645 fail2ban.filter         [470]: INFO    [nginx-botsearch] Found 34.208.47.66 - 2021-11-12 07:01:13
+2021-11-12 07:17:50,163 fail2ban.filter         [470]: INFO    [nginx-botsearch] Found 34.208.47.66 - 2021-11-12 07:17:50
+2021-11-12 07:17:50,641 fail2ban.actions        [470]: NOTICE  [nginx-botsearch] Ban 34.208.47.66
+2021-11-12 07:27:50,031 fail2ban.actions        [470]: NOTICE  [nginx-botsearch] Unban 34.208.47.66
