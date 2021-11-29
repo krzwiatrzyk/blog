@@ -1,1 +1,1 @@
-2021-11-21 02:00:01,196 fail2ban.server         [470]: INFO    rollover performed on /config/log/fail2ban/fail2ban.log
+2021-11-28 02:00:00,769 fail2ban.server         [470]: INFO    rollover performed on /config/log/fail2ban/fail2ban.log
