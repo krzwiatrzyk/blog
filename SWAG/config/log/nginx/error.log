@@ -8,3 +8,7 @@
 2021/11/30 07:05:42 [crit] 4152#4152: *10004 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 125.64.94.140, server: 0.0.0.0:443
 2021/11/30 15:36:01 [crit] 4152#4152: *10113 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 167.172.240.54, server: 0.0.0.0:443
 2021/11/30 15:57:42 [crit] 4152#4152: *10130 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 118.123.105.67, server: 0.0.0.0:443
+2021/12/01 02:15:31 [crit] 4637#4637: *11 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 107.178.238.45, server: 0.0.0.0:443
+2021/12/01 02:15:37 [crit] 4637#4637: *22 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 107.178.238.49, server: 0.0.0.0:443
+2021/12/01 02:17:06 [crit] 4637#4637: *46 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 107.178.232.176, server: 0.0.0.0:443
+2021/12/01 03:47:07 [crit] 4637#4637: *84 SSL_read_early_data() failed (SSL: error:141CF06C:SSL routines:tls_parse_ctos_key_share:bad key share) while SSL handshaking, client: 192.241.212.88, server: 0.0.0.0:443
