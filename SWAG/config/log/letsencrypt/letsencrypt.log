@@ -68,3 +68,21 @@ Renewing an existing certificate for krzwiatrzyk.eu and www.krzwiatrzyk.eu
 Congratulations, all renewals succeeded: 
   /etc/letsencrypt/live/krzwiatrzyk.eu/fullchain.pem (success)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<------------------------------------------------->
+
+<------------------------------------------------->
+cronjob running on Thu Dec 2 02:08:00 CET 2021
+Running certbot renew
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/krzwiatrzyk.eu.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Certificate not yet due for renewal
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The following certificates are not due for renewal yet:
+  /etc/letsencrypt/live/krzwiatrzyk.eu/fullchain.pem expires on 2022-03-01 (skipped)
+No renewals were attempted.
+No hooks were run.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
