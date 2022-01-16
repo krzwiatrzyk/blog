@@ -196,3 +196,21 @@ iptables -w -I INPUT -p tcp -j f2b-nginx-botsearch
 2022-01-12 22:19:56,366 fail2ban.jail           [470]: INFO    Jail 'nginx-botsearch' started
 2022-01-12 22:19:56,367 fail2ban.jail           [470]: INFO    Jail 'nginx-badbots' started
 2022-01-12 22:19:56,382 fail2ban.jail           [470]: INFO    Jail 'nginx-deny' started
+2022-01-15 11:26:51,311 fail2ban.filter         [470]: INFO    [nginx-botsearch] Found 36.94.125.20 - 2022-01-15 11:26:50
+2022-01-15 11:26:52,727 fail2ban.filter         [470]: INFO    [nginx-botsearch] Found 36.94.125.20 - 2022-01-15 11:26:52
+2022-01-15 11:26:52,747 fail2ban.actions        [470]: NOTICE  [nginx-botsearch] Ban 36.94.125.20
+2022-01-15 11:26:52,805 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- exec: iptables -w -N f2b-nginx-botsearch
+iptables -w -A f2b-nginx-botsearch -j RETURN
+iptables -w -I INPUT -p tcp -j f2b-nginx-botsearch
+2022-01-15 11:26:52,805 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "modprobe: can't change directory to '/lib/modules': No such file or directory"
+2022-01-15 11:26:52,805 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "iptables v1.8.7 (legacy): can't initialize iptables table `filter': Table does not exist (do you need to insmod?)"
+2022-01-15 11:26:52,805 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: 'Perhaps iptables or your kernel needs to be upgraded.'
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "modprobe: can't change directory to '/lib/modules': No such file or directory"
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "iptables v1.8.7 (legacy): can't initialize iptables table `filter': Table does not exist (do you need to insmod?)"
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: 'Perhaps iptables or your kernel needs to be upgraded.'
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "modprobe: can't change directory to '/lib/modules': No such file or directory"
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: "iptables v1.8.7 (legacy): can't initialize iptables table `filter': Table does not exist (do you need to insmod?)"
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- stderr: 'Perhaps iptables or your kernel needs to be upgraded.'
+2022-01-15 11:26:52,806 fail2ban.utils          [470]: ERROR   7f1d378150f0 -- returned 3
+2022-01-15 11:26:52,807 fail2ban.actions        [470]: ERROR   Failed to execute ban jail 'nginx-botsearch' action 'iptables-allports' info 'ActionInfo({'ip': '36.94.125.20', 'family': 'inet4', 'fid': <function Actions.ActionInfo.<lambda> at 0x7f1d37e52820>, 'raw-ticket': <function Actions.ActionInfo.<lambda> at 0x7f1d37e52ee0>})': Error starting action Jail('nginx-botsearch')/iptables-allports: 'Script error'
+2022-01-15 11:36:52,167 fail2ban.actions        [470]: NOTICE  [nginx-botsearch] Unban 36.94.125.20
