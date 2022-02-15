@@ -1,23 +1,7 @@
 <------------------------------------------------->
 
 <------------------------------------------------->
-cronjob running on Sun Jan 30 02:08:00 CET 2022
-Running certbot renew
-Saving debug log to /var/log/letsencrypt/letsencrypt.log
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Processing /etc/letsencrypt/renewal/krzwiatrzyk.eu.conf
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Renewing an existing certificate for krzwiatrzyk.eu and www.krzwiatrzyk.eu
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Congratulations, all renewals succeeded: 
-  /etc/letsencrypt/live/krzwiatrzyk.eu/fullchain.pem (success)
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-<------------------------------------------------->
-
-<------------------------------------------------->
-cronjob running on Mon Jan 31 02:08:00 CET 2022
+cronjob running on Mon Feb 14 02:08:00 CET 2022
 Running certbot renew
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 
