@@ -68,11 +68,18 @@ namespaces:
 # only private repos hosted in s3 buckets are now supported
 helmRepos:
   traefik: https://helm.traefik.io/traefik
+  cert-manager: https://charts.jetstack.io
 
 # define the desired state of your applications helm charts
 # each contains the following:
 
 apps:
+  cert-manager:
+    namespace: "apps"
+    enabled: true
+    chart: "cert-manager/cert-manager"
+    version: 1.7.1
+    priority: -1
   customchart:
     namespace: "apps"
     enabled: true
@@ -86,8 +93,8 @@ apps:
     ### Optional values below
     valuesFiles:
     - values/traefik.yaml
+    priority: -1
     #test: false
-    #priority: -2
     #noHooks: false
     #timeout: 300
     #maxHistory: 4
