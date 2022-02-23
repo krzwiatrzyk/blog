@@ -80,7 +80,7 @@ apps:
     version: "10.14.2" # chart version
     ### Optional values below
     valuesFiles:
-    - values/treafik.yaml
+    - ./values/treafik.yaml
     #test: false
     #priority: -2
     #noHooks: false
