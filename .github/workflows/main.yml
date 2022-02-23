@@ -56,4 +56,4 @@ jobs:
 
       - name: Helmsman apply
         run: |
-         helmsman -f Apps/helmsman.yaml apply  
+         helmsman -f Apps/helmsman.yaml --apply  
