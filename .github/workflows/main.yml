@@ -50,10 +50,6 @@ jobs:
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
           helmsman -f Apps/helmsman.yaml
           
-      - name: Helmsman plan
-        run: |
-          helmsman -f Apps/helmsman.yaml
-
       - name: Helmsman apply
         run: |
          helmsman -f Apps/helmsman.yaml --apply  
