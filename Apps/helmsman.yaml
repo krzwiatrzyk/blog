@@ -79,7 +79,8 @@ apps:
     chart: "traefik/traefik" # changing the chart name means delete and recreate this chart
     version: "10.14.2" # chart version
     ### Optional values below
-    valuesFile: ""
+    valuesFiles:
+    - values/treafik.yaml
     #test: false
     #priority: -2
     #noHooks: false
