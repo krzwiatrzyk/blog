@@ -44,10 +44,5 @@ jobs:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           mkdir -p ~/.kube
-          echo -e $KUBECONFIG > ~/.kube/config
-          sleep 1
-          cat ~/.kube/config
-          sleep 1
-          echo $KUBECONFIG
-          sleep 1
+          echo $KUBECONFIG | base64 -d > ~/.kube/config
           kubectl get nodes
