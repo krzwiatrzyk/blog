@@ -1,0 +1,6 @@
+service:
+  type: ClusterIP
+
+ports:
+  websecure:
+    hostPort: 8443
