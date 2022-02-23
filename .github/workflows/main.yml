@@ -39,9 +39,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Inject Kubeconfig
+        shell: bash
         env:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           mkdir -p ~/.kube
-          echo $KUBECONFIG >> ~/.kube/config
+          echo -e $KUBECONFIG > ~/.kube/config
           kubectl get nodes
