@@ -20,6 +20,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+        
       # Runs a single command using the runners shell
       - name: Install Required Tools
         run: |
@@ -45,4 +48,5 @@ jobs:
         run: |
           mkdir -p ~/.kube
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
+          pwd && ls
           helmsman -f Apps/helmsman.yaml
