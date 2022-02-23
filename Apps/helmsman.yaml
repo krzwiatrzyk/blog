@@ -80,6 +80,8 @@ apps:
     chart: "cert-manager/cert-manager"
     version: 1.7.1
     priority: -1
+    valuesFiles:
+    - values/cert-manager.yaml
   customchart:
     namespace: "apps"
     enabled: true
