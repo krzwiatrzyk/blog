@@ -4,6 +4,8 @@ service:
 ports:
   websecure:
     hostPort: 443
+  web:
+    hostPort: 80
 
 # additionalArguments:
 #   - --certificatesresolvers.myresolver.acme.tlschallenge

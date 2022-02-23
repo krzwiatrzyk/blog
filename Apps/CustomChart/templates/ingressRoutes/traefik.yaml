@@ -12,4 +12,4 @@ spec:
     - kind: TraefikService
       name: api@internal  
   tls:
-    certResolver: default
+    secretName: 
