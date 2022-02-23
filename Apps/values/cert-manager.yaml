@@ -20,3 +20,5 @@ startupapicheck:
     requests:
       cpu: 10m
       memory: 32Mi
+
+installCRDs: true
