@@ -8,8 +8,8 @@ spec:
   routes:
   - match: Host(`{{ .Values.ingressHost }}`) && PathPrefix(`/traefik`)
     kind: Rule
-│   services:                                                                                                                                                                     │
-│   - kind: TraefikService                                                                                                                                                        │
-│     name: api@internal  
+    services:                                                                                                                                                                     │
+    - kind: TraefikService                                                                                                                                                        │
+      name: api@internal  
   tls:
     certResolver: default
