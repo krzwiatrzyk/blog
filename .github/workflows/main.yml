@@ -41,10 +41,8 @@ jobs:
       - name: Inject Kubeconfig
         shell: bash
         env:
-          KUBECONFIG: ${{ secrets.KUBECONFIG }}
+          KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           mkdir -p ~/.kube
-          echo $KUBECONFIG | base64 -d > ~/.kube/config
-          cat ~/.kube/config
-          echo $KUBECONFIG
-          #kubectl get nodes
+          echo $KUBE_CONFIG | base64 -d > ~/.kube/config
+          kubectl get nodes
