@@ -45,4 +45,6 @@ jobs:
         run: |
           mkdir -p ~/.kube
           echo $KUBECONFIG | base64 -d > ~/.kube/config
-          kubectl get nodes
+          cat ~/.kube/config
+          echo $KUBECONFIG
+          #kubectl get nodes
