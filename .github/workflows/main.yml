@@ -38,6 +38,9 @@ jobs:
           mv helmsman /usr/local/bin/helmsman
 
       # Runs a set of commands using the runners shell
-      - name: Check binaries
+      - name: Inject Kubeconfig
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
-          kubectl && helm && helmsman
+          echo $KUBECONFIG >> ~/.kube/config
+          kubectl get nodes
