@@ -6,7 +6,7 @@ spec:
   entryPoints:
   - websecure
   routes:
-  - match: Host(`{{ .Values.ingressHost }}`) && PathPrefix(`/traefik`)
+  - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
     kind: Rule
     services:
     - kind: TraefikService
