@@ -17,3 +17,15 @@ status:
 
 uninstall:
 	/usr/local/bin/k3s-uninstall.sh
+
+install-flux:
+	curl -s https://fluxcd.io/install.sh | sudo bash
+	echo "source <(flux completion zsh)" >> ~/.zshrc
+
+bootstrap-flux:
+	flux bootstrap github \
+	--owner=krzwiatrzyk \
+	--repository=blog \
+	--path=K3s/flux \
+	--branch=master \
+	--personal

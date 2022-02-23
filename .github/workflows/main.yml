@@ -1,0 +1,55 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  helmsman-apply:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-18.04
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+        
+      # Runs a single command using the runners shell
+      - name: Install Required Tools
+        run: |
+          # Install Kubectl
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x kubectl
+          mkdir -p ~/.local/bin/kubectl
+          mv ./kubectl ~/.local/bin/kubectl
+          # Install Helm
+          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+          # Install Helm Diff
+          helm plugin install https://github.com/databus23/helm-diff
+          # Install Helmsmann
+          # on Linux
+          curl -L https://github.com/Praqma/helmsman/releases/download/v3.8.1/helmsman_3.8.1_linux_amd64.tar.gz | tar zx
+          mv helmsman /usr/local/bin/helmsman
+
+      # Runs a set of commands using the runners shell
+      - name: Inject Kubeconfig
+        shell: bash
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+        run: |
+          mkdir -p ~/.kube
+          echo $KUBE_CONFIG | base64 -d > ~/.kube/config
+          
+      - name: Helmsman apply
+        run: |
+          pwd && ls
+          helmsman -f Apps/helmsman.yaml --apply  
