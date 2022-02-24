@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - match: Host(`krzwiatrzyk.eu`)
+    kind: Rule
+    services:
+    - kind: Service
+      name: ghost  
+  tls:
+    secretName: krzwiatrzyk.eu

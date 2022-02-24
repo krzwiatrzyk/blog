@@ -74,6 +74,11 @@ helmRepos:
 # each contains the following:
 
 apps:
+  customghost:
+    namespace: "apps"
+    enabled: true
+    version: 0.0.1
+    chart: "./CustomGhost"
   cert-manager:
     namespace: "apps"
     enabled: true
