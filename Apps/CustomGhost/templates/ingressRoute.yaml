@@ -10,6 +10,7 @@ spec:
     kind: Rule
     services:
     - kind: Service
-      name: ghost  
+      name: ghost
+      port: 80
   tls:
     secretName: krzwiatrzyk.eu
