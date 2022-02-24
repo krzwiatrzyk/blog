@@ -25,7 +25,7 @@ ingressClass:
 
 # Activate Pilot integration
 pilot:
-  enabled: false
-  token: ""
+  enabled: true
+  # token: ""
   # Toggle Pilot Dashboard
-  # dashboard: false
+  dashboard: true

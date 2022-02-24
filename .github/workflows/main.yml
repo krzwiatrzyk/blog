@@ -41,15 +41,19 @@ jobs:
           mv helmsman /usr/local/bin/helmsman
 
       # Runs a set of commands using the runners shell
-      - name: Inject Kubeconfig
+      - name: Inject Secrets
         shell: bash
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
         run: |
           mkdir -p ~/.kube
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
+          echo $AGE_SECRET_KEY > /key.txt
           
       - name: Helmsman apply
+        env:
+          AGE_SECRET_KEY_FILE: '/key.txt'
         run: |
           pwd && ls
           helmsman -f Apps/helmsman.yaml --apply  
