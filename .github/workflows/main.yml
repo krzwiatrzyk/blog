@@ -35,6 +35,8 @@ jobs:
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           # Install Helm Diff
           helm plugin install https://github.com/databus23/helm-diff
+          # Install Helm Secrets
+          helm plugin install https://github.com/jkroepke/helm-secrets
           # Install Helmsmann
           # on Linux
           curl -L https://github.com/Praqma/helmsman/releases/download/v3.8.1/helmsman_3.8.1_linux_amd64.tar.gz | tar zx
