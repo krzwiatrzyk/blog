@@ -49,11 +49,11 @@ jobs:
         run: |
           mkdir -p ~/.kube
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
-          echo $SOPS_AGE_KEY > /key.txt
+          echo $SOPS_AGE_KEY > ~/key.txt
           
       - name: Helmsman apply
         env:
-          SOPS_AGE_KEY_FILE: '/key.txt'
+          SOPS_AGE_KEY_FILE: '~/key.txt'
         run: |
           pwd && ls
           helmsman -f Apps/helmsman.yaml --apply  
