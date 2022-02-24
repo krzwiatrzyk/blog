@@ -45,15 +45,15 @@ jobs:
         shell: bash
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
-          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
         run: |
           mkdir -p ~/.kube
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
-          echo $AGE_SECRET_KEY > /key.txt
+          echo $SOPS_AGE_KEY > /key.txt
           
       - name: Helmsman apply
         env:
-          AGE_SECRET_KEY_FILE: '/key.txt'
+          SOPS_AGE_KEY_FILE: '/key.txt'
         run: |
           pwd && ls
           helmsman -f Apps/helmsman.yaml --apply  
