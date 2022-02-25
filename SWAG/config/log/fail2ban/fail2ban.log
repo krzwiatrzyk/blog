@@ -58,3 +58,80 @@
 2022-02-23 22:34:20,389 fail2ban.jail           [471]: INFO    Jail 'nginx-botsearch' started
 2022-02-23 22:34:20,390 fail2ban.jail           [471]: INFO    Jail 'nginx-badbots' started
 2022-02-23 22:34:20,391 fail2ban.jail           [471]: INFO    Jail 'nginx-deny' started
+2022-02-24 17:29:52,369 fail2ban.server         [471]: INFO    Shutdown in progress...
+2022-02-24 17:29:52,436 fail2ban.observer       [471]: INFO    Observer stop ... try to end queue 5 seconds
+2022-02-24 17:29:52,468 fail2ban.observer       [471]: INFO    Observer stopped, 0 events remaining.
+2022-02-24 17:29:52,509 fail2ban.server         [471]: INFO    Stopping all jails
+2022-02-24 17:29:52,538 fail2ban.filter         [471]: INFO    Removed logfile: '/config/log/nginx/error.log'
+2022-02-24 17:29:52,543 fail2ban.filter         [471]: INFO    Removed logfile: '/config/log/nginx/access.log'
+2022-02-24 17:29:52,548 fail2ban.filter         [471]: INFO    Removed logfile: '/config/log/nginx/access.log'
+2022-02-24 17:29:52,548 fail2ban.filter         [471]: INFO    Removed logfile: '/config/log/nginx/error.log'
+2022-02-24 17:29:52,641 fail2ban.actions        [471]: NOTICE  [nginx-botsearch] Flush ticket(s) with iptables-allports
+2022-02-24 17:29:52,646 fail2ban.actions        [471]: NOTICE  [nginx-badbots] Flush ticket(s) with iptables-allports
+2022-02-24 17:29:52,640 fail2ban.actions        [471]: NOTICE  [nginx-deny] Flush ticket(s) with iptables-allports
+2022-02-24 17:29:52,649 fail2ban.actions        [471]: NOTICE  [nginx-http-auth] Flush ticket(s) with iptables-allports
+2022-02-24 17:29:52,787 fail2ban.jail           [471]: INFO    Jail 'nginx-http-auth' stopped
+2022-02-24 17:29:53,112 fail2ban.jail           [471]: INFO    Jail 'nginx-botsearch' stopped
+2022-02-24 17:29:53,113 fail2ban.jail           [471]: INFO    Jail 'nginx-badbots' stopped
+2022-02-24 17:29:53,113 fail2ban.jail           [471]: INFO    Jail 'nginx-deny' stopped
+2022-02-24 17:29:53,119 fail2ban.database       [471]: INFO    Connection to database closed.
+2022-02-24 17:29:53,127 fail2ban.server         [471]: INFO    Exiting Fail2ban
+2022-02-24 17:30:13,999 fail2ban.server         [478]: INFO    --------------------------------------------------
+2022-02-24 17:30:14,000 fail2ban.server         [478]: INFO    Starting Fail2ban v0.11.2
+2022-02-24 17:30:14,001 fail2ban.observer       [478]: INFO    Observer start...
+2022-02-24 17:30:14,032 fail2ban.database       [478]: INFO    Connected to fail2ban persistent database '/config/fail2ban/fail2ban.sqlite3'
+2022-02-24 17:30:14,034 fail2ban.jail           [478]: INFO    Creating new jail 'nginx-http-auth'
+2022-02-24 17:30:14,045 fail2ban.jail           [478]: INFO    Jail 'nginx-http-auth' uses poller {}
+2022-02-24 17:30:14,045 fail2ban.jail           [478]: INFO    Initiated 'polling' backend
+2022-02-24 17:30:14,052 fail2ban.filter         [478]: INFO      maxRetry: 5
+2022-02-24 17:30:14,053 fail2ban.filter         [478]: INFO      findtime: 600
+2022-02-24 17:30:14,053 fail2ban.actions        [478]: INFO      banTime: 600
+2022-02-24 17:30:14,053 fail2ban.filter         [478]: INFO      encoding: UTF-8
+2022-02-24 17:30:14,055 fail2ban.filter         [478]: INFO    Added logfile: '/config/log/nginx/error.log' (pos = 87300, hash = 0ce835b012ef5f60cc1e189411d8d3d76179f794)
+2022-02-24 17:30:14,055 fail2ban.jail           [478]: INFO    Creating new jail 'nginx-botsearch'
+2022-02-24 17:30:14,057 fail2ban.jail           [478]: INFO    Jail 'nginx-botsearch' uses poller {}
+2022-02-24 17:30:14,057 fail2ban.jail           [478]: INFO    Initiated 'polling' backend
+2022-02-24 17:30:14,063 fail2ban.datedetector   [478]: INFO      date pattern `'{^LN-BEG}%ExY(?P<_sep>[-/.])%m(?P=_sep)%d[T ]%H:%M:%S(?:[.,]%f)?(?:\\s*%z)?'`: `{^LN-BEG}ExYear(?P<_sep>[-/.])Month(?P=_sep)Day[T ]24hour:Minute:Second(?:[.,]Microseconds)?(?:\s*Zone offset)?`
+2022-02-24 17:30:14,066 fail2ban.filter         [478]: INFO      maxRetry: 2
+2022-02-24 17:30:14,066 fail2ban.filter         [478]: INFO      findtime: 600
+2022-02-24 17:30:14,066 fail2ban.actions        [478]: INFO      banTime: 600
+2022-02-24 17:30:14,067 fail2ban.filter         [478]: INFO      encoding: UTF-8
+2022-02-24 17:30:14,068 fail2ban.filter         [478]: INFO    Added logfile: '/config/log/nginx/access.log' (pos = 403746, hash = e802a2cd19c128013fe9a15e01495a262f345093)
+2022-02-24 17:30:14,068 fail2ban.jail           [478]: INFO    Creating new jail 'nginx-badbots'
+2022-02-24 17:30:14,070 fail2ban.jail           [478]: INFO    Jail 'nginx-badbots' uses poller {}
+2022-02-24 17:30:14,070 fail2ban.jail           [478]: INFO    Initiated 'polling' backend
+2022-02-24 17:30:14,087 fail2ban.filter         [478]: INFO      maxRetry: 2
+2022-02-24 17:30:14,088 fail2ban.filter         [478]: INFO      findtime: 600
+2022-02-24 17:30:14,088 fail2ban.actions        [478]: INFO      banTime: 600
+2022-02-24 17:30:14,088 fail2ban.filter         [478]: INFO      encoding: UTF-8
+2022-02-24 17:30:14,088 fail2ban.filter         [478]: INFO    Added logfile: '/config/log/nginx/access.log' (pos = 403746, hash = e802a2cd19c128013fe9a15e01495a262f345093)
+2022-02-24 17:30:14,089 fail2ban.jail           [478]: INFO    Creating new jail 'nginx-deny'
+2022-02-24 17:30:14,090 fail2ban.jail           [478]: INFO    Jail 'nginx-deny' uses poller {}
+2022-02-24 17:30:14,091 fail2ban.jail           [478]: INFO    Initiated 'polling' backend
+2022-02-24 17:30:14,094 fail2ban.filter         [478]: INFO      maxRetry: 5
+2022-02-24 17:30:14,094 fail2ban.filter         [478]: INFO      findtime: 600
+2022-02-24 17:30:14,094 fail2ban.actions        [478]: INFO      banTime: 600
+2022-02-24 17:30:14,094 fail2ban.filter         [478]: INFO      encoding: UTF-8
+2022-02-24 17:30:14,094 fail2ban.filter         [478]: INFO    Added logfile: '/config/log/nginx/error.log' (pos = 87300, hash = 0ce835b012ef5f60cc1e189411d8d3d76179f794)
+2022-02-24 17:30:14,096 fail2ban.jail           [478]: INFO    Jail 'nginx-http-auth' started
+2022-02-24 17:30:14,097 fail2ban.jail           [478]: INFO    Jail 'nginx-botsearch' started
+2022-02-24 17:30:14,098 fail2ban.jail           [478]: INFO    Jail 'nginx-badbots' started
+2022-02-24 17:30:14,099 fail2ban.jail           [478]: INFO    Jail 'nginx-deny' started
+2022-02-24 17:30:58,349 fail2ban.server         [478]: INFO    Shutdown in progress...
+2022-02-24 17:30:58,419 fail2ban.observer       [478]: INFO    Observer stop ... try to end queue 5 seconds
+2022-02-24 17:30:58,453 fail2ban.observer       [478]: INFO    Observer stopped, 0 events remaining.
+2022-02-24 17:30:58,499 fail2ban.server         [478]: INFO    Stopping all jails
+2022-02-24 17:30:58,521 fail2ban.filter         [478]: INFO    Removed logfile: '/config/log/nginx/error.log'
+2022-02-24 17:30:58,521 fail2ban.filter         [478]: INFO    Removed logfile: '/config/log/nginx/access.log'
+2022-02-24 17:30:58,522 fail2ban.filter         [478]: INFO    Removed logfile: '/config/log/nginx/access.log'
+2022-02-24 17:30:58,522 fail2ban.filter         [478]: INFO    Removed logfile: '/config/log/nginx/error.log'
+2022-02-24 17:30:58,782 fail2ban.actions        [478]: NOTICE  [nginx-botsearch] Flush ticket(s) with iptables-allports
+2022-02-24 17:30:58,785 fail2ban.actions        [478]: NOTICE  [nginx-http-auth] Flush ticket(s) with iptables-allports
+2022-02-24 17:30:58,787 fail2ban.jail           [478]: INFO    Jail 'nginx-http-auth' stopped
+2022-02-24 17:30:58,788 fail2ban.actions        [478]: NOTICE  [nginx-deny] Flush ticket(s) with iptables-allports
+2022-02-24 17:30:58,788 fail2ban.actions        [478]: NOTICE  [nginx-badbots] Flush ticket(s) with iptables-allports
+2022-02-24 17:30:58,790 fail2ban.jail           [478]: INFO    Jail 'nginx-botsearch' stopped
+2022-02-24 17:30:58,790 fail2ban.jail           [478]: INFO    Jail 'nginx-badbots' stopped
+2022-02-24 17:30:58,790 fail2ban.jail           [478]: INFO    Jail 'nginx-deny' stopped
+2022-02-24 17:30:58,792 fail2ban.database       [478]: INFO    Connection to database closed.
+2022-02-24 17:30:58,798 fail2ban.server         [478]: INFO    Exiting Fail2ban
