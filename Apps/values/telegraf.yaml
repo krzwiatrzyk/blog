@@ -9,7 +9,7 @@ resources:
 pdb:
   create: false
 
-configs:
+config:
   inputs:
   - kubernetes:
       url: "http://127.0.0.1:10250"
