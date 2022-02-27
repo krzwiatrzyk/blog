@@ -1,0 +1,10 @@
+resources:
+  requests:
+    memory: 128Mi
+    cpu: 100m
+  limits:
+    memory: 128Mi
+    cpu: 100m
+
+pdb:
+  create: false
