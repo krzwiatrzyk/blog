@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: krzwiatrzyk.eu
+spec:
+  secretName: krzwiatrzyk.eu
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: krzwiatrzyk.eu
+  dnsNames:
+  - krzwiatrzyk.eu

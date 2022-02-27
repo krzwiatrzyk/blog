@@ -35,21 +35,28 @@ jobs:
           curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
           # Install Helm Diff
           helm plugin install https://github.com/databus23/helm-diff
+          # Install Helm Secrets
+          helm plugin install https://github.com/jkroepke/helm-secrets
           # Install Helmsmann
           # on Linux
           curl -L https://github.com/Praqma/helmsman/releases/download/v3.8.1/helmsman_3.8.1_linux_amd64.tar.gz | tar zx
           mv helmsman /usr/local/bin/helmsman
-
+          # Install Sops and Age
+          make install-age install-sops
       # Runs a set of commands using the runners shell
-      - name: Inject Kubeconfig
+      - name: Inject Secrets
         shell: bash
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG }}
+          SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
         run: |
           mkdir -p ~/.kube
           echo $KUBE_CONFIG | base64 -d > ~/.kube/config
+          echo $SOPS_AGE_KEY > /tmp/key.txt
           
       - name: Helmsman apply
+        env:
+          SOPS_AGE_KEY_FILE: /tmp/key.txt
         run: |
           pwd && ls
           helmsman -f Apps/helmsman.yaml --apply  
