@@ -9,16 +9,18 @@ resources:
 pdb:
   create: false
 
-config:
-  inputs:
-  - kubernetes:
-      url: "http://127.0.0.1:10250"
-  - statsd:
-      service_address: ":8125"
-      percentiles:
-        - 50
-        - 95
-        - 99
-      metric_separator: "_"
-      allowed_pending_messages: 10000
-      percentile_limit: 1000
+# config:
+#   inputs:
+#   - kubernetes:
+#       url: "https://kubernetes.default.svc"
+#       #bearer_token: "/var/run/secrets/kubernetes.io/serviceaccount/token"
+#       insecure_skip_verify: true
+#   - statsd:
+#       service_address: ":8125"
+#       percentiles:
+#         - 50
+#         - 95
+#         - 99
+#       metric_separator: "_"
+#       allowed_pending_messages: 10000
+#       percentile_limit: 1000

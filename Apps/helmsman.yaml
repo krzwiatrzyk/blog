@@ -78,8 +78,8 @@ apps:
   telegraf:
     namespace: "apps"
     enabled: true
-    version: 1.8.14
-    chart: "influxdata/telegraf"
+    version: 1.0.29
+    chart: "influxdata/telegraf-ds"
     valuesFiles:
     - values/telegraf.yaml
     secretsFiles:
