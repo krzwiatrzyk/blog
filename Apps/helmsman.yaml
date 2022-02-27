@@ -83,7 +83,7 @@ apps:
     valuesFiles:
     - values/telegraf.yaml
     secretsFiles:
-    - values/secretes/telegraf.yaml
+    - values/secrets/telegraf.yaml
   customghost:
     namespace: "apps"
     enabled: true
