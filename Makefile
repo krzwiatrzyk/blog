@@ -2,6 +2,12 @@
 
 install-krew-plugins:
 	kubectl krew install resource-capacity
+	kubectl krew install df-pv
+	kubectl krew install doctor
+	kubectl krew install konfig
+
+show-anomalies:
+	kubectl doctor
 
 show-pods-capacity:
 	kubectl resource-capacity --pods

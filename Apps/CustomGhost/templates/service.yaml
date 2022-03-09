@@ -6,5 +6,5 @@ spec:
   selector:
     app: ghost
   ports:
-  - port: 80
+  - port: 2368
     targetPort: 2368
