@@ -29,3 +29,7 @@ spec:
         env:
         - name: url
           value: "https://krzwiatrzyk.eu"
+        - name: DEBUG
+          value: "ghost:*,ghost-config"
+        - name: NODE_ENV
+          value: production
