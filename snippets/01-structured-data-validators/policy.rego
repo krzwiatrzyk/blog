@@ -1,15 +1,27 @@
 package main
 
-disallowed_instances_v1 = {"t4g.small", "t4g.large", "t4g.xlarge"}
-disallowed_instances_v2 = ["t4g.small", "t4g.large", "t4g.xlarge"]
+import rego.v1
+
+allowed_instances = {"t4g.small", "t4g.large", "t4g.xlarge"}
+disallowed_instances = ["m5a.large"]
 
 
-deny[msg] {
-  input.instance == disallowed_instances_v1[_]
+deny contains msg if {
+  not input.instance in allowed_instances
 
-  msg := "Instance size is not allowed"
+  print(input)
+
+  msg := sprintf("Instance type %s is not allowed - rule 2", input.instance)
 }
 
-test_deny {
-  deny with input.instance as disallowed_instances_v2
+deny contains msg if {
+  input.instance in disallowed_instances
+
+  print(input)
+
+  msg := sprintf("Instance type %s is not allowed - rule 2", input.instance )
+}
+
+test_deny_wrong_instance_type if {
+  deny with input as {"instance": "m5a.large"}
 }
