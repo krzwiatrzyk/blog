@@ -1,18 +1,15 @@
 package main
 
+disallowed_instances_v1 = {"t4g.small", "t4g.large", "t4g.xlarge"}
+disallowed_instances_v2 = ["t4g.small", "t4g.large", "t4g.xlarge"]
+
+
 deny[msg] {
-  not input.instance
+  input.instance == disallowed_instances_v1[_]
 
   msg := "Instance size is not allowed"
 }
 
-
-# Define the disallowed instance types
-disallowed_instances = {"t4g.small", "t4g.large", "t4g.xlarge"}
-
-# Check if the instance field is disallowed
-deny {
-    input.instance == disallowed
-} {
-    disallowed = disallowed_instances[_]
+test_deny {
+  deny with input.instance as disallowed_instances_v2
 }
