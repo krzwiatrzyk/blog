@@ -6,7 +6,7 @@ allowed_instances := ["t4g.small", "t4g.large", "t4g.xlarge"]
 disallowed_instances := ["m5a.large"]
 
 deny contains msg if {
-  print input
+  # print(input)
 
   not input.instance in allowed_instances
 

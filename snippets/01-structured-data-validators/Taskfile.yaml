@@ -15,5 +15,20 @@ tasks:
 
   test:
     cmds:
+    - opa eval -d policy_test.rego -d policy.rego -i data.yaml data
     - opa test . -v
     - conftest verify --policy policy.rego
+
+  cue:install:
+    cmds:
+    - brew install cue-lang/tap/cue
+    status:
+    - command -v cue
+
+  cue:validate:
+    cmds:
+    - cue vet policy.cue data.yaml
+
+  cue:import-data:
+    cmds:
+    - cue import data.yaml -f
