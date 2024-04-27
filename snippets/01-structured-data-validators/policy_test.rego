@@ -1,11 +1,10 @@
 package main 
 
-empty(value) {
-  count(value) == 0
-}
+import rego.v1
+
 
 no_violations {
-  empty(deny)
+  deny
 }
 
 test_deny_wrong_instance_type {
