@@ -12,3 +12,8 @@ tasks:
     - conftest:install 
     cmds:
     - conftest test data.yaml --policy .
+
+  test:
+    cmds:
+    - opa test . -v
+    - conftest verify --policy policy.rego
