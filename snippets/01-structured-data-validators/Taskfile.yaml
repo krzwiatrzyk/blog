@@ -32,3 +32,18 @@ tasks:
   cue:import-data:
     cmds:
     - cue import data.yaml -f
+
+  check-jsonschema:install:
+    cmds:
+    - brew install pipx
+    - pipx ensurepath
+    - pipx install check-jsonschema
+    # - brew install check-jsonschema
+    status:
+    - command -v check-jsonschema
+
+  check-jsonschema:
+    deps:
+    - check-jsonschema:install
+    cmds:
+    - check-jsonschema --schemafile database.schema.json data.yaml
