@@ -20,10 +20,10 @@ spec:
       project: default
       sources:
       - repoURL: https://github.com/krzwiatrzyk/blog.git
-        targetRevision: main
+        targetRevision: master
         ref: repo
       - repoURL: https://ealenn.github.io/charts
-        targetRevision: '0.6.0'
+        targetRevision: '0.5.0'
         chart: echo-server
         helm:
           valueFiles:
@@ -32,5 +32,6 @@ spec:
         server: https://kubernetes.default.svc
         namespace: echo-server
       syncPolicy:
+        automated: {}
         syncOptions:
         - CreateNamespace=true

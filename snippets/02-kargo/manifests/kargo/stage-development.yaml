@@ -1,0 +1,25 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: development
+  namespace: echo-server
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: echo-server-image
+    sources:
+      direct: true
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/krzwiatrzyk/blog.git
+      writeBranch: master
+      helm:
+        images:
+        - valuesFilePath: snippets/02-kargo/app/development.yaml
+          key: image.tag
+          value: Tag
+          image: ealen/echo-server
+    # argoCDAppUpdates:
+    # - appName: kargo-demo-test
+    #   appNamespace: argocd

@@ -5,3 +5,5 @@ tasks:
   - git add .
   - git commit -m "$(date)"
   - git push origin master
+
+  pre-commit:install: pre-commit install

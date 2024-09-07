@@ -1,0 +1,11 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: echo-server-image
+  namespace: echo-server
+spec:
+  subscriptions:
+  - image:
+      repoURL: ealen/echo-server
+      # semverConstraint: ^0.6.0
+      discoveryLimit: 5

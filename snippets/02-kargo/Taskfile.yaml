@@ -2,6 +2,7 @@ version: 3
 
 tasks:
   cluster:create: k3d cluster create -c k3d.yaml
+  cluster:delete: k3d cluster delete -c k3d.yaml
 
   deploy:
   - task: deploy:cert-manager
@@ -31,5 +32,28 @@ tasks:
     -f values/kargo.yaml
     --wait
 
+  deploy:manifests:app: kubectl apply -f manifests/app
+  deploy:manifests:kargo: kubectl apply -f manifests/kargo
+  deploy:manifests:secrets:
+    preconditions:
+      - sh: test "$GITHUB_PAT" != ""
+        msg: "GITHUB_PAT environment variable must be set!"
+    cmds:
+    - cat manifests/secret/git-credentials.yaml | envsubst | kubectl apply -f -
+      
+
   ui:argo-cd: open http://argo-cd.traefik.me:8088
   ui:kargo: open http://kargo.traefik.me:8088
+
+  kargo:cli:install: |
+    arch=$(uname -m)
+    [ "$arch" = "x86_64" ] && arch=amd64
+    curl -L -o kargo https://github.com/akuity/kargo/releases/latest/download/kargo-"$(uname -s | tr '[:upper:]' '[:lower:]')-${arch}"
+    chmod +x kargo
+    sudo mv kargo /usr/local/bin/kargo
+
+  kargo:login: >
+    kargo login http://kargo.traefik.me:8088
+    --admin --password admin
+
+  kargo:projects: kargo get projects

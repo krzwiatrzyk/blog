@@ -1,0 +1,23 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: staging
+  namespace: echo-server
+spec:
+  requestedFreight:
+  - origin:
+      kind: Warehouse
+      name: echo-server-image
+    sources:
+      stages:
+      - development
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/krzwiatrzyk/blog.git
+      writeBranch: master
+      helm:
+        images:
+        - valuesFilePath: snippets/02-kargo/app/staging.yaml
+          key: image.tag
+          value: Tag
+          image: ealen/echo-server
