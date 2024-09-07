@@ -1,0 +1,16 @@
+apiVersion: k3d.io/v1alpha3
+kind: Simple
+name: kargo
+servers: 1
+agents: 0
+options:
+  k3s:
+    extraArgs:
+      - arg: --disable=metrics-server
+        nodeFilters:
+          - server:*
+
+ports:
+  - port: 8088:80
+    nodeFilters:
+      - loadbalancer

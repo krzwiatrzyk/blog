@@ -1,0 +1,36 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: echo-server
+  namespace: argo-cd
+spec:
+  generators:
+  - list:
+      elements:
+      - stage: development
+      - stage: staging
+      - stage: production
+  template:
+    metadata:
+      name: echo-server-{{stage}}
+      annotations:
+        kargo.akuity.io/authorized-stage: echo-server:{{stage}}
+    spec:
+      project: default
+      sources:
+      - repoURL: https://github.com/krzwiatrzyk/blog.git
+        targetRevision: main
+        ref: repo
+      - repoURL: https://ealenn.github.io/charts
+        targetRevision: '0.6.0'
+        chart: echo-server
+        helm:
+          valueFiles:
+          - $repo/snippets/02-kargo/app/{{stage}}.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: echo-server
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true

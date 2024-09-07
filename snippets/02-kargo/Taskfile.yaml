@@ -1,0 +1,35 @@
+version: 3
+
+tasks:
+  cluster:create: k3d cluster create -c k3d.yaml
+
+  deploy:
+  - task: deploy:cert-manager
+  - task: deploy:argo-rollouts
+  - task: deploy:argo-cd
+  - task: deploy:kargo
+
+
+  deploy:cert-manager:
+  - kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.15.3/cert-manager.crds.yaml
+  - helm repo add jetstack https://charts.jetstack.io --force-update
+  - helm upgrade --install cert-manager --create-namespace --namespace cert-manager --version v1.15.3 jetstack/cert-manager
+
+  deploy:argo-cd:
+  - helm upgrade --install argo-cd -f values/argo-cd.yaml --namespace argo-cd --create-namespace oci://ghcr.io/argoproj/argo-helm/argo-cd --version 7.5.2
+  
+  deploy:argo-rollouts:
+  - helm repo add argo https://argoproj.github.io/argo-helm
+  - helm upgrade --install --namespace argo-rollouts --create-namespace argo-rollouts argo/argo-rollouts --version 2.37.6
+
+  deploy:kargo:
+  - >
+    helm upgrade --install kargo 
+    oci://ghcr.io/akuity/kargo-charts/kargo 
+    --namespace kargo 
+    --create-namespace 
+    -f values/kargo.yaml
+    --wait
+
+  ui:argo-cd: open http://argo-cd.traefik.me:8088
+  ui:kargo: open http://kargo.traefik.me:8088

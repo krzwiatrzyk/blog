@@ -1,0 +1,19 @@
+global:
+  domain: "argo-cd.traefik.me"
+
+configs:
+  secret:
+    # Password = "admin"
+    argocdServerAdminPassword: $2a$10$/OsTVOvxCBZj8VwdtGegzeFdfio9CFtfrtzB/FOcPnwRHNS87G95W
+
+  policy.default: 'admin'
+
+  cm:
+    users.anonymous.enabled: "true"
+
+  params:
+    server.insecure: true
+
+server:
+  ingress:
+    enabled: true
