@@ -33,5 +33,3 @@ spec:
         namespace: echo-server
       syncPolicy:
         automated: {}
-        syncOptions:
-        - CreateNamespace=true
