@@ -18,3 +18,5 @@ tasks:
   - argocd login local --core
   list: argocd app list
   sync:sta:app1: argocd app sync argo-cd/app1-sta
+  sync:sta:app2: argocd app sync argo-cd/app2-sta --timeout 30 
+

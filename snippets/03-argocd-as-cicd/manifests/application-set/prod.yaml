@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: prod
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"] #missingkey=invalid
+  generators:
+  - git:
+      repoURL: https://github.com/krzwiatrzyk/blog.git
+      revision: master
+      files:
+      - path: "snippets/03-argocd-as-cicd/catalog/*/prod.yaml"
+  template:
+    metadata:
+      name: '{{ index .path.segments 3 }}-prod'
+    spec:
+      project: default
+      destination:
+        name: in-cluster
+        namespace: '{{ index .path.segments 3 }}'
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+      sources:
+      - repoURL: https://github.com/krzwiatrzyk/blog.git
+        targetRevision: master
+        ref: repo
+      - repoURL: https://github.com/krzwiatrzyk/blog.git
+        targetRevision: 'master'
+        path: snippets/03-argocd-as-cicd/chart
+        helm:
+          valueFiles:
+          - $repo/{{ .path.path }}/prod.yaml
