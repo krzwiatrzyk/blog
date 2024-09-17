@@ -1,0 +1,21 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-4"
+spec:
+  template:
+    metadata:
+      name: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: sleeper
+          image: busybox
+          command: 
+          - /bin/sh
+          args:
+          - -c
+          - sleep 10
+      restartPolicy: Never
