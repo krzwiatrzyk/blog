@@ -13,12 +13,12 @@ spec:
       - path: "snippets/03-argocd-as-cicd/catalog/*/sta.yaml"
   template:
     metadata:
-      name: '{{ index .path.segments 4 }}-sta'
+      name: '{{ index .path.segments 3 }}-sta'
     spec:
       project: default
       destination:
         name: in-cluster
-        namespace: '{{ index .path.segments 4 }}'
+        namespace: '{{ index .path.segments 3 }}'
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
@@ -31,4 +31,4 @@ spec:
         path: snippets/03-argocd-as-cicd/chart
         helm:
           valueFiles:
-          - $repo/{{ .path }}
+          - $repo/{{ .path.path }}/sta.yaml

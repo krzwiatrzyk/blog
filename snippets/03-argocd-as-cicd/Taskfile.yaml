@@ -5,10 +5,16 @@ tasks:
   cluster:delete: k3d cluster delete -c k3d.yaml
 
 
-  deploy: kubectl apply -f manifests/application-set -n argo-cd
+  deploy:applicationsets: kubectl apply -f manifests/application-set -n argo-cd
 
   argocd:ui: open http://argo-cd.traefik.me:8088
   argocd:cli:install: arkade get argocd
   argocd:deploy:
   - helm upgrade --wait --install argo-cd -f values/argo-cd.yaml --namespace argo-cd --create-namespace oci://ghcr.io/argoproj/argo-helm/argo-cd --version 7.5.2
   
+
+  login: 
+  - kubectl ns argo-cd
+  - argocd login local --core
+  list: argocd app list
+  sync:sta:app1: argocd app sync argo-cd/app1-sta
