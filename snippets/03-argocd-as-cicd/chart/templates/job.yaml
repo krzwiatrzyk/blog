@@ -15,7 +15,5 @@ spec:
           image: busybox
           command: 
           - /bin/sh
-          args:
-          - -c
-          - sleep 10
+          args: {{ .Values.job.args | toYaml | nindent 10 }}
       restartPolicy: Never
