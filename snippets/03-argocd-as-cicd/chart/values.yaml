@@ -1,5 +1,8 @@
 replicas: 1
 
+image:
+  tag: 1.14.2
+
 job:
   args:
   - -c
