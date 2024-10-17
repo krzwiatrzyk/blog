@@ -20,4 +20,4 @@ spec:
         - valuesFilePath: snippets/02-kargo/app/staging.yaml
           key: image.tag
           value: Tag
-          image: ealen/echo-server
+          image: ttl.sh/echo-server

@@ -19,7 +19,7 @@ spec:
         - valuesFilePath: snippets/02-kargo/app/development.yaml
           key: image.tag
           value: Tag
-          image: ealen/echo-server
+          image: ttl.sh/echo-server
     # argoCDAppUpdates:
     # - appName: kargo-demo-test
     #   appNamespace: argocd

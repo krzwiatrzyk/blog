@@ -65,14 +65,17 @@ tasks:
   kargo:projects: kargo get projects
 
   image:pull:
-  - docker pull nginx:latest
+  - docker pull ealen/echo-server:0.5.0
 
-  image:push:v1: 
-  - docker tag nginx:latest ttl.sh/echo-server:1.0.0
+  image:push:1.0.0: 
+  - docker tag ealen/echo-server:0.5.0 ttl.sh/echo-server:1.0.0
   - docker push ttl.sh/echo-server:1.0.0
-  image:push:v2: 
-  - docker tag nginx:latest ttl.sh/echo-server:1.0.1
+  image:push:1.0.1: 
+  - docker tag ealen/echo-server:0.5.0 ttl.sh/echo-server:1.0.1
   - docker push ttl.sh/echo-server:1.0.1
-  image:push:v3: 
-  - docker tag nginx:latest ttl.sh/echo-server:1.0.2
+  image:push:1.0.2: 
+  - docker tag ealen/echo-server:0.5.0 ttl.sh/echo-server:1.0.2
   - docker push ttl.sh/echo-server:1.0.2
+  image:push:1.0.3: 
+  - docker tag ealen/echo-server:0.5.0 ttl.sh/echo-server:1.0.3
+  - docker push ttl.sh/echo-server:1.0.3
