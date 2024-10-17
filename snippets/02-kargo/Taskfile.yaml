@@ -31,6 +31,7 @@ tasks:
   - >
     helm upgrade --install kargo 
     oci://ghcr.io/akuity/kargo-charts/kargo 
+    --version 0.8.8
     --namespace kargo 
     --wait
     --create-namespace 
@@ -62,3 +63,16 @@ tasks:
     --admin --password admin
 
   kargo:projects: kargo get projects
+
+  image:pull:
+  - docker pull nginx:latest
+
+  image:push:v1: 
+  - docker tag nginx:latest ttl.sh/echo-server:1.0.0
+  - docker push ttl.sh/echo-server:1.0.0
+  image:push:v2: 
+  - docker tag nginx:latest ttl.sh/echo-server:1.0.1
+  - docker push ttl.sh/echo-server:1.0.1
+  image:push:v3: 
+  - docker tag nginx:latest ttl.sh/echo-server:1.0.2
+  - docker push ttl.sh/echo-server:1.0.2

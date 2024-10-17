@@ -1,2 +1,4 @@
 image:
-  tag: 0.6.0
+  tag: 1.0.0
+  # repository: ealen/echo-server
+  repository: ttl.sh/echo-server

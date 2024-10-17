@@ -6,6 +6,6 @@ metadata:
 spec:
   subscriptions:
   - image:
-      repoURL: ealen/echo-server
+      repoURL: ttl.sh/echo-server
       # semverConstraint: ^0.6.0
       discoveryLimit: 5
